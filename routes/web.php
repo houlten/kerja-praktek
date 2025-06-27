@@ -111,3 +111,9 @@ Livewire::setScriptRoute(function ($handle) {
     $path = config('app.debug') ? '/livewire/livewire.js' : '/livewire/livewire.min.js';
     return Route::get(url($path), $handle);
 });
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/migrate', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return '✅ Migration executed successfully!';
+});
