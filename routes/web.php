@@ -117,3 +117,4 @@ Route::get('/migrate', function () {
     Artisan::call('migrate', ['--force' => true]);
     return '✅ Migration executed successfully!';
 });
+
